@@ -22,8 +22,8 @@ import com.pdm0126.foodspot.ui.theme.PlusJakartaSans
 fun FoodStopBar() {
     val gradient = Brush.linearGradient(
         colors = listOf(
-            Color(0xFF3711BF),
-            Color(0xFF280D8C)
+            Color(0xFFFF670F),
+            Color(0xFFFF2F0F)
         ),
         start = Offset(0f,0f),
         end = Offset(1000f, 1000f)

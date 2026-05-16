@@ -10,7 +10,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.input.rememberTextFieldState
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
-import androidx.compose.material3.Card
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
@@ -21,6 +20,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import com.pdm0126.foodspot.ui.screens.components.CarouselRestaurant
 import com.pdm0126.foodspot.ui.screens.components.FoodStopBar
 import com.pdm0126.foodspot.viewmodel.RestauranteViewModel
 
@@ -59,19 +59,27 @@ fun HomeScreen(modifier: Modifier = Modifier, viewModel: RestauranteViewModel = 
                         )
                     },
                     colors = OutlinedTextFieldDefaults.colors(
-                        focusedBorderColor = Color(0xFF7E00FA),
+                        focusedBorderColor = Color(0xFFFF2F0F),
                         unfocusedBorderColor = Color(0xFF2D3F54),
-                        focusedLabelColor = Color(0xFF7E00FA),
+                        focusedLabelColor = Color(0xFFFF2F0F),
                         unfocusedLabelColor = Color(0xFF2D3F54),
-                        focusedLeadingIconColor = Color(0xFF7E00FA),
+                        focusedLeadingIconColor = Color(0xFFFF2F0F),
                         unfocusedLeadingIconColor = Color(0xFF2D3F54),
-                        focusedTextColor = Color(0xFF2D3F54)
+                        focusedTextColor = Color(0xFF2D3F54),
+                        cursorColor = Color(0xFFFF2F0F)
                     )
                 )
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                ) {
+                    val restaurants = viewModel.restaurants
 
-                Card(
+                    CarouselRestaurant(
+                        title = "Explora restaurantes",
+                        restaurants = restaurants)
 
-                ) { }
+                }
             }
         }
     }

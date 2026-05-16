@@ -19,6 +19,7 @@ import com.pdm0126.foodspot.data.model.Restaurant
 @Composable
 fun CarouselRestaurant(
     title: String,
+    modifier: Modifier = Modifier,
     restaurants: List<Restaurant>
 ) {
     Column(
@@ -35,8 +36,8 @@ fun CarouselRestaurant(
             contentPadding = PaddingValues(horizontal = 16.dp),
             horizontalArrangement = Arrangement.spacedBy(12.dp)
         ) {
-            items(restaurants) {restaurants ->
-                CardRestaurants(restaurants)
+            items(restaurants) {restaurant ->
+                CardRestaurants(restaurant = restaurant)
             }
         }
     }

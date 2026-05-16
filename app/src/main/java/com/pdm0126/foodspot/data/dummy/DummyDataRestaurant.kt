@@ -9,7 +9,7 @@ val sampleRestaurant = listOf(
         name = "Pizza Place",
         description = "Las mejores pizzas artesanales de la ciudad",
         imageUrl = "https://i.pinimg.com/736x/7c/c9/33/7cc9332219ddc7cb970ccafad1443305.jpg",
-        categories = listOf("Italiana", "Pizzas"),
+        categories = listOf("Pizzas"),
         menu = listOf(
             Menus(
                 id = 1,
@@ -30,7 +30,7 @@ val sampleRestaurant = listOf(
         name = "Pizza Boom",
         description = "Creando experiencias que despiertan tus sentidos",
         imageUrl = "https://scontent.fsal2-2.fna.fbcdn.net/v/t39.30808-6/485083045_1059883702851442_575144521288973301_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=ZfOYdOj7kvgQ7kNvwHFLaV6&_nc_oc=Adr6FaoR0yEZuC5xKALqlVgi6FOj5gQ8ph-IptiY3YwWgm5v51qmjFtaVwLbcIm8b3yQpiB8Dez2nQm0RmvkJ_nP&_nc_zt=23&_nc_ht=scontent.fsal2-2.fna&_nc_gid=cZlPtySEJMX-RxJZDh2cew&_nc_ss=7b289&oh=00_Af6UA37JqDB2JtWfCfiG8OmSqcEY0zFCdHnUjUGqsv89Dw&oe=6A0B3753",
-        categories = listOf("Italiana", "Pizzas"),
+        categories = listOf("Pizzas"),
         menu =  listOf(
             Menus(
                 id = 1,
@@ -57,7 +57,7 @@ val sampleRestaurant = listOf(
         name = "Pizza Hut",
         description = "Nadie supera a The Hut en pizzas",
         imageUrl = "https://thumbs.dreamstime.com/b/pizza-hut-restaurant-exterior-visible-interior-dusk-balikpapan-indonesia-april-captured-featuring-illuminated-signage-455290721.jpg",
-        categories = listOf("Italiana", "Pizzas"),
+        categories = listOf("Pizzas"),
         menu = listOf(
             Menus(
                 id = 1,
@@ -84,7 +84,7 @@ val sampleRestaurant = listOf(
         name = "Papa Johns",
         description = "Mejores ingredientes. Mejor pizza. Papa John's",
         imageUrl = "https://www.lagranvia.com.sv/storage/shops/QlIXDruEaBp77DKN1Km1qSnwagg7kIcwUYHKvyMu.jpeg",
-        categories = listOf("Italiana", "Pizzas"),
+        categories = listOf("Pizzas"),
         menu = listOf(
             Menus(
                 id = 1,
@@ -111,7 +111,7 @@ val sampleRestaurant = listOf(
         name = "Little Caesar",
         description = "¡Pizza! ¡Pizza!",
         imageUrl = "https://peruretail.sfo3.cdn.digitaloceanspaces.com/wp-content/uploads/little-caesars-3-per%C3%BA-retail.jpeg",
-        categories = listOf("Italiana", "Pizza"),
+        categories = listOf("Pizzas"),
         menu = listOf(
             Menus(
                 id = 1,
@@ -138,7 +138,7 @@ val sampleRestaurant = listOf(
         name = "Pollo Campero",
         description = "Vivir a Todo Sabor",
         imageUrl = "https://assets-bizneworleans-com.s3.amazonaws.com/2025/02/IMG_9262-1.jpeg",
-        categories = listOf( "Pollo", "Ensaladas"),
+        categories = listOf( "Street Food"),
         menu =  listOf(
             Menus(
                 id = 1,
@@ -165,7 +165,7 @@ val sampleRestaurant = listOf(
         name = "KOI",
         description = "Bebidas premium hechas con ingredientes de alta calidad, inspiradas en la cultura del té asiático",
         imageUrl = "https://media-cdn.tripadvisor.com/media/photo-s/06/67/b1/46/koi-sushi.jpg",
-        categories = listOf("Bebidas", "Té", "Milk Tea", "Cafe"),
+        categories = listOf("Asian Food"),
         menu = listOf(
             Menus(
                 id = 1,
@@ -192,7 +192,7 @@ val sampleRestaurant = listOf(
         name = "Starbucks",
         description = "Café premium , bebidas frías y postres en un ambiente acogedor",
         imageUrl = "https://cdn.forbes.com.mx/2026/01/Starbucks-ventas.webp",
-        categories = listOf("Café", "Bebidas", "Postres"),
+        categories = listOf("Coffe Shop"),
         menu = listOf(
             Menus(
                 id = 1,
@@ -219,7 +219,7 @@ val sampleRestaurant = listOf(
         name = "Burger King",
         description = "Hamburguesas a la parrilla con ingredientes frescos y sabor auténtico",
         imageUrl = "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/01/8d/17/good-service-for-a-change.jpg?w=900&h=-1&s=1",
-        categories = listOf("Hamburguesas", "Comida Rápida", "Bebidas"),
+        categories = listOf("Street Food"),
         menu = listOf(
             Menus(
                 id = 1,
@@ -246,7 +246,7 @@ val sampleRestaurant = listOf(
         name = "La Pampa Argentina",
         description = "Restaurante elegante especializado en cortes premium y gastronomía argentina",
         imageUrl = "https://s.ineventos.com/sv/2014/10/112082/restaurantes-la-pampa-149855-i-640w.jpg",
-        categories = listOf("Carnes", "Parrilla", "Gourmet"),
+        categories = listOf("Parilladas"),
         menu = listOf(
             Menus(
                 id = 1,

@@ -7,7 +7,9 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.input.rememberTextFieldState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Icon
@@ -20,13 +22,18 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.pdm0126.foodspot.ui.screens.components.CarouselRestaurant
 import com.pdm0126.foodspot.ui.screens.components.FoodStopBar
 import com.pdm0126.foodspot.viewmodel.RestauranteViewModel
 
 
 @Composable
-fun HomeScreen(modifier: Modifier = Modifier, viewModel: RestauranteViewModel = viewModel()) {
+fun HomeScreen(
+    navController: NavController,
+    modifier: Modifier = Modifier,
+    viewModel: RestauranteViewModel = viewModel(),
+) {
 
     Scaffold(
         topBar = {
@@ -35,13 +42,17 @@ fun HomeScreen(modifier: Modifier = Modifier, viewModel: RestauranteViewModel = 
     ) { innerPadding ->
 
         Box(
-            modifier = Modifier
+            modifier = modifier
                 .fillMaxWidth()
                 .fillMaxHeight()
                 .background(Color(0xFFE1E5E8))
                 .padding(innerPadding)
         ) {
-            Column {
+            Column (
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .verticalScroll(rememberScrollState())
+            ){
                 OutlinedTextField(
                     modifier = Modifier
                         .padding(10.dp)
@@ -73,12 +84,14 @@ fun HomeScreen(modifier: Modifier = Modifier, viewModel: RestauranteViewModel = 
                     modifier = Modifier
                         .fillMaxWidth()
                 ) {
-                    val restaurants = viewModel.restaurants
+                    val Categoria = viewModel.restaurantByCategory
 
-                    CarouselRestaurant(
-                        title = "Explora restaurantes",
-                        restaurants = restaurants)
-
+                    Categoria.forEach { (categoria, Listrestaurants) ->
+                        CarouselRestaurant(
+                            title = " $categoria",
+                            restaurants = Listrestaurants
+                        )
+                    }
                 }
             }
         }

@@ -1,7 +1,7 @@
 package com.pdm0126.foodspot.ui.screens.components
 
 
-import androidx.compose.foundation.background
+
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -14,16 +14,18 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.pdm0126.foodspot.data.model.Restaurant
 
 @Composable
 fun CarouselRestaurant(
+    navController: NavController,
     title: String,
     modifier: Modifier = Modifier,
     restaurants: List<Restaurant>
 ) {
     Column(
-        modifier = Modifier.fillMaxWidth()
+        modifier = modifier.fillMaxWidth()
             .padding(10.dp)
     ) {
         Text(
@@ -37,7 +39,10 @@ fun CarouselRestaurant(
             horizontalArrangement = Arrangement.spacedBy(12.dp)
         ) {
             items(restaurants) {restaurant ->
-                CardRestaurants(restaurant = restaurant)
+                CardRestaurants(
+                    restaurant = restaurant,
+                    navController =  navController
+                )
             }
         }
     }

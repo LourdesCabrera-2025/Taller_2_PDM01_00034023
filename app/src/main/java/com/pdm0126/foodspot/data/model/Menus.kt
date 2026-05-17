@@ -4,6 +4,12 @@ data class Menus(
     val id: Int,
     val name: String,
     val description: String,
+    val categoria : CategoryMenu,
     val imageUrl: String
 )
 
+enum class CategoryMenu {
+    Entradas ,Principales, Guarniciones, Postres, Bebidas;
+
+
+}

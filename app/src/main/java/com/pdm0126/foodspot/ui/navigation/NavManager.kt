@@ -1,13 +1,13 @@
 package com.pdm0126.foodspot.ui.navigation
 
 import androidx.compose.runtime.Composable
-import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.pdm0126.foodspot.ui.screens.home.DetailRestaurant
-import com.pdm0126.foodspot.ui.screens.home.HomeScreen
-import com.pdm0126.foodspot.ui.screens.home.SearchRestaurant
+import com.pdm0126.foodspot.ui.screens.DetailRestaurant
+import com.pdm0126.foodspot.ui.screens.HomeScreen
+import com.pdm0126.foodspot.ui.screens.SearchRestaurant
+import com.pdm0126.foodspot.ui.screens.components.NavTab
 
 @Composable
 fun NavManager(
@@ -20,11 +20,20 @@ fun NavManager(
         composable ("homescreen"){
             HomeScreen(navController)
         }
-        composable ("detailrestaurant"){
-            DetailRestaurant(navController)
+        composable ("detailrestaurant/{restaurantId}"){
+           backStackEntry ->
+            val restaurantId = backStackEntry.arguments
+                ?.getString("restaurantId")
+                ?.toIntOrNull() ?:0
+
+            DetailRestaurant(
+                navController = navController,
+                restaurantId = restaurantId
+            )
         }
         composable ("searchrestaurant"){
             SearchRestaurant(navController)
         }
+
     }
 }

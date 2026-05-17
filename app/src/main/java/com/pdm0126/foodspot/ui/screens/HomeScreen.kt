@@ -1,4 +1,4 @@
-package com.pdm0126.foodspot.ui.screens.home
+package com.pdm0126.foodspot.ui.screens
 
 
 import androidx.compose.foundation.background
@@ -37,7 +37,7 @@ fun HomeScreen(
 
     Scaffold(
         topBar = {
-            FoodStopBar()
+            FoodStopBar("FoodSpot")
         }
     ) { innerPadding ->
 
@@ -84,12 +84,13 @@ fun HomeScreen(
                     modifier = Modifier
                         .fillMaxWidth()
                 ) {
-                    val Categoria = viewModel.restaurantByCategory
+                    val categoria = viewModel.restaurantByCategory
 
-                    Categoria.forEach { (categoria, Listrestaurants) ->
+                    categoria.forEach { (categoria, listrestaurants) ->
                         CarouselRestaurant(
                             title = " $categoria",
-                            restaurants = Listrestaurants
+                            restaurants = listrestaurants,
+                            navController = navController
                         )
                     }
                 }

@@ -6,15 +6,18 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.filled.ShoppingBag
 import androidx.compose.material.icons.filled.Stars
+import androidx.compose.material3.Badge
+import androidx.compose.material3.BadgedBox
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
@@ -22,6 +25,10 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
@@ -41,11 +48,13 @@ import com.pdm0126.foodspot.viewmodel.RestauranteViewModel
 fun DetailRestaurant(
     navController: NavController,
     restaurantId: Int,
-    viewModel: RestauranteViewModel = viewModel()
+    viewModel: RestauranteViewModel = viewModel(),
 ) {
-    val restaurant = viewModel.restaurants.find { it.id == restaurantId }
     val restaurants = viewModel.getRestaurantById(restaurantId)
-    if (restaurant == null) {
+    var selectedProducts by remember { mutableStateOf(setOf<Int>()) }
+    val badgeCount = selectedProducts.size
+
+    if (restaurants == null) {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
@@ -64,7 +73,7 @@ fun DetailRestaurant(
         containerColor = Color(0xFFE1E5E8),
         topBar = {
             FoodStopBar(
-                title = restaurant.name,
+                title = restaurants.name,
                 navigationIcon = {
                     IconButton(
                         onClick = {
@@ -75,6 +84,28 @@ fun DetailRestaurant(
                             imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                             contentDescription = "Back"
                         )
+                    }
+                },
+                actions = {
+                    IconButton(
+                        onClick = {
+
+                        }
+                    ) {
+                        BadgedBox(
+                            badge = {
+                                if (badgeCount > 0) {
+                                    Badge {
+                                        Text(text = badgeCount.toString())
+                                    }
+                                }
+                            }
+                        ) {
+                            Icon(
+                                imageVector = Icons.Filled.ShoppingBag,
+                                contentDescription = "Shopping"
+                            )
+                        }
                     }
                 }
             )
@@ -99,8 +130,8 @@ fun DetailRestaurant(
                         .height(300.dp)
                 ) {
                     AsyncImage(
-                        model = restaurant.imageUrl,
-                        contentDescription = restaurant.name,
+                        model = restaurants.imageUrl,
+                        contentDescription = restaurants.name,
                         modifier = Modifier.matchParentSize(),
                         contentScale = ContentScale.FillHeight
                     )
@@ -129,7 +160,7 @@ fun DetailRestaurant(
                             tint = Color(0xFFB83600),
                         )
                         Text(
-                            text = "${restaurant.description}",
+                            text = "${restaurants.description}",
                             fontSize = 14.sp,
                             fontFamily = FontFamily(Font(R.font.plusjakartasans_light)),
                             color = Color.Black
@@ -137,7 +168,10 @@ fun DetailRestaurant(
                     }
                 }
                 NavTab(
-                    restaurant = restaurant
+                    restaurant = restaurants,
+                    onAddProduct = {
+                        menuId-> selectedProducts  =  selectedProducts + menuId
+                    }
                 )
             }
         }

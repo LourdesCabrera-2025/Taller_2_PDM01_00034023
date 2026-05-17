@@ -1,5 +1,6 @@
 package com.pdm0126.foodspot.data.dummy
 
+import android.view.Menu
 import com.pdm0126.foodspot.data.model.CategoryMenu
 import com.pdm0126.foodspot.data.model.Menus
 import com.pdm0126.foodspot.data.model.Restaurant
@@ -9,7 +10,7 @@ val sampleRestaurant = listOf(
         id = 1,
         name = "Pizza Place",
         description = "Las mejores pizzas artesanales de la ciudad",
-        imageUrl = "https://i.pinimg.com/736x/7c/c9/33/7cc9332219ddc7cb970ccafad1443305.jpg",
+        imageUrl = "https://images.squarespace-cdn.com/content/v1/627c020e5b1d930b0e349af2/c3321cbf-bc81-4ff6-a9e6-9d1e7296fc18/PP_logo_3color_web_large.png",
         categories = listOf("Pizzas"),
         menu = listOf(
             Menus(
@@ -17,7 +18,7 @@ val sampleRestaurant = listOf(
                 name = "Pizza Margarita",
                 description = "Mozarella, albahaca y tomate fresco",
                 categoria = CategoryMenu.Principales,
-                imageUrl = "https://i.pinimg.com/736x/96/94/c8/9694c8624335217731e6c9e8ece72312.jpg"
+                imageUrl = "https://i.pinimg.com/736x/76/ce/18/76ce18a00bda94201875548caaf90876.jpg"
             ),
             Menus(
                 id =  2,
@@ -32,7 +33,7 @@ val sampleRestaurant = listOf(
         id = 2,
         name = "Pizza Boom",
         description = "Creando experiencias que despiertan tus sentidos",
-        imageUrl = "https://scontent.fsal2-2.fna.fbcdn.net/v/t39.30808-6/485083045_1059883702851442_575144521288973301_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=ZfOYdOj7kvgQ7kNvwHFLaV6&_nc_oc=Adr6FaoR0yEZuC5xKALqlVgi6FOj5gQ8ph-IptiY3YwWgm5v51qmjFtaVwLbcIm8b3yQpiB8Dez2nQm0RmvkJ_nP&_nc_zt=23&_nc_ht=scontent.fsal2-2.fna&_nc_gid=cZlPtySEJMX-RxJZDh2cew&_nc_ss=7b289&oh=00_Af6UA37JqDB2JtWfCfiG8OmSqcEY0zFCdHnUjUGqsv89Dw&oe=6A0B3753",
+        imageUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1Zuvk0bj-U22DsB19rriAUAhqZtqSvPyW5g&s",
         categories = listOf("Pizzas"),
         menu =  listOf(
             Menus(
@@ -62,7 +63,7 @@ val sampleRestaurant = listOf(
         id = 3,
         name = "Pizza Hut",
         description = "Nadie supera a The Hut en pizzas",
-        imageUrl = "https://thumbs.dreamstime.com/b/pizza-hut-restaurant-exterior-visible-interior-dusk-balikpapan-indonesia-april-captured-featuring-illuminated-signage-455290721.jpg",
+        imageUrl = "https://adage.com/resizer/v2/6N6FT5SYSRAPXMWNXSDAQD7YJM.jpg?auth=b352725033167239b2935822e4e4142aebea1fc5d2ca04e8d2853d46512b82d2&width=300",
         categories = listOf("Pizzas"),
         menu = listOf(
             Menus(
@@ -92,7 +93,7 @@ val sampleRestaurant = listOf(
         id = 4,
         name = "Papa Johns",
         description = "Mejores ingredientes. Mejor pizza. Papa John's",
-        imageUrl = "https://www.lagranvia.com.sv/storage/shops/QlIXDruEaBp77DKN1Km1qSnwagg7kIcwUYHKvyMu.jpeg",
+        imageUrl = "https://comelongo.com/wp-content/uploads/2020/12/126246380_10158803843896670_4153352553538382066_n.jpg",
         categories = listOf("Pizzas"),
         menu = listOf(
             Menus(
@@ -122,7 +123,7 @@ val sampleRestaurant = listOf(
         id = 5,
         name = "Little Caesar",
         description = "¡Pizza! ¡Pizza!",
-        imageUrl = "https://peruretail.sfo3.cdn.digitaloceanspaces.com/wp-content/uploads/little-caesars-3-per%C3%BA-retail.jpeg",
+        imageUrl = "https://i.pinimg.com/564x/22/45/80/224580315c673fd541fd018e0d32e29c.jpg",
         categories = listOf("Pizzas"),
         menu = listOf(
             Menus(
@@ -152,7 +153,7 @@ val sampleRestaurant = listOf(
         id = 6,
         name = "Pollo Campero",
         description = "Vivir a Todo Sabor",
-        imageUrl = "https://assets-bizneworleans-com.s3.amazonaws.com/2025/02/IMG_9262-1.jpeg",
+        imageUrl = "https://logonoid.com/images/pollo-campero-logo.png",
         categories = listOf( "Street Food"),
         menu =  listOf(
             Menus(
@@ -182,7 +183,7 @@ val sampleRestaurant = listOf(
         id = 7,
         name = "KOI",
         description = "Bebidas premium hechas con ingredientes de alta calidad, inspiradas en la cultura del té asiático",
-        imageUrl = "https://media-cdn.tripadvisor.com/media/photo-s/06/67/b1/46/koi-sushi.jpg",
+        imageUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPYwB7gvSbQL1-aYpU_DZvDzwLCTDMxE2Yhw&s",
         categories = listOf("Asian Food"),
         menu = listOf(
             Menus(
@@ -190,14 +191,14 @@ val sampleRestaurant = listOf(
                 name = "Bubble Milk Tea",
                 description = "Té negro con leche fresca y perlas de tapioca",
                 categoria = CategoryMenu.Bebidas,
-                imageUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLNnHIP85fimO_ijdNcxoX_yVHPkjh1Gk2hQ&s"
+                imageUrl = "https://i.pinimg.com/736x/e6/59/2e/e6592e7815518c8a8d5311b4f6afbf30.jpg"
             ),
             Menus(
                 id = 2 ,
                 name = "Golden Bubble Milk",
                 description = "Leche fresca con perlas doradas de tapioca y azúcar morena",
                 categoria = CategoryMenu.Bebidas,
-                imageUrl = "https://i.pinimg.com/474x/31/e8/31/31e8310ad1b832d545aee9dffa74d8cf.jpg"
+                imageUrl = "https://i.pinimg.com/1200x/b0/e1/67/b0e16714fde9dcfa1c20e2a27b86920a.jpg"
             ),
             Menus(
                 id = 3,
@@ -212,7 +213,7 @@ val sampleRestaurant = listOf(
         id = 8,
         name = "Starbucks",
         description = "Café premium , bebidas frías y postres en un ambiente acogedor",
-        imageUrl = "https://cdn.forbes.com.mx/2026/01/Starbucks-ventas.webp",
+        imageUrl = "https://static.vecteezy.com/system/resources/previews/022/636/386/non_2x/starbucks-logo-starbucks-icon-transparent-free-png.png",
         categories = listOf("Coffe Shop"),
         menu = listOf(
             Menus(
@@ -220,7 +221,7 @@ val sampleRestaurant = listOf(
                 name = "Caramel Frappuchino",
                 description = "Bebida fría de café con caramelo, leche y crema batida",
                 categoria = CategoryMenu.Bebidas,
-                imageUrl = "https://images.unsplash.com/photo-1592321675774-3de57f3ee0dc?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                imageUrl = "https://cloudassets.starbucks.com/is/image/sbuxcorp/SBX20220323_CaramelFrapp?impolicy=1by1_wide_topcrop_630&crop=180,360,1440,1440&wid=630&hei=630&qlt=85"
             ),
             Menus(
                 id = 2,
@@ -242,7 +243,7 @@ val sampleRestaurant = listOf(
         id = 9,
         name = "Burger King",
         description = "Hamburguesas a la parrilla con ingredientes frescos y sabor auténtico",
-        imageUrl = "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/01/8d/17/good-service-for-a-change.jpg?w=900&h=-1&s=1",
+        imageUrl = "https://logowik.com/content/uploads/images/310_burgerking.jpg",
         categories = listOf("Street Food"),
         menu = listOf(
             Menus(
@@ -272,7 +273,7 @@ val sampleRestaurant = listOf(
         id = 10,
         name = "La Pampa Argentina",
         description = "Restaurante elegante especializado en cortes premium y gastronomía argentina",
-        imageUrl = "https://s.ineventos.com/sv/2014/10/112082/restaurantes-la-pampa-149855-i-640w.jpg",
+        imageUrl = "https://plazakristal.com/wp-content/uploads/plaza-kristal-tiendas-la-pampa.png",
         categories = listOf("Parilladas"),
         menu = listOf(
             Menus(
@@ -280,21 +281,35 @@ val sampleRestaurant = listOf(
                 name = "Ribeye Premiumm",
                 description = "Corte premium acompañado de vegetales salteados y papas gourmet",
                 categoria = CategoryMenu.Principales,
-                imageUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGc1hd-4DD-nEcCqOZ4VYwkxn0L35pcRqGhQ&s"
+                imageUrl = "https://i.pinimg.com/1200x/3c/a9/9a/3ca99a55d718100b7dc154093d704410.jpg"
             ),
             Menus(
                 id = 2,
                 name = "Filete Mignon",
                 description = "Filete de res suave en salsa de vino con puré artesanal",
                 categoria = CategoryMenu.Principales,
-                imageUrl = "https://thumbs.dreamstime.com/b/filete-de-gourmet-mignon-steak-con-salsa-vino-del-puerto-pur%C3%A9-patatas-romero-aderezo-exposici%C3%B3n-gastron%C3%B3mica-elegante-y-384809400.jpg"
+                imageUrl = "https://i.pinimg.com/1200x/aa/0f/25/aa0f25f4d9bb3327d1ceac5007b577c9.jpg"
             ),
             Menus(
                 id = 3,
                 name = "Salmón a la parrilla",
                 description = "Salmón fresco con mantequilla de  hierbas y espárragos",
                 categoria = CategoryMenu.Principales,
-                imageUrl = "https://www.hola.com/horizon/landscape/ae5503073445-salmon-age-t.jpg?im=Resize=(1200)"
+                imageUrl = "https://i.pinimg.com/1200x/17/16/6c/17166cc0075c7440662401d86f8125ac.jpg"
+            ),
+            Menus(
+                id = 4,
+                name = "Burrata con pesto",
+                description = "Burrata cremosa acompañada de pesto artesanal, tomates cherry frescos y un toque de aceite de oliva extra virgen",
+                categoria = CategoryMenu.Entradas,
+                imageUrl = "https://i.pinimg.com/1200x/46/c2/01/46c201d94251715a6faaa442d8ab87bb.jpg"
+            ),
+            Menus(
+                id = 5,
+                name = "Ensalada César ",
+                description = "Lechuga romana fresca, crutones crocantes, queso parmesano y aderezo César tradicional con pollo a la parrilla.",
+                categoria = CategoryMenu.Entradas,
+                imageUrl = "https://i.pinimg.com/1200x/58/4f/43/584f430dd54f19fd2a36e1391fcf7507.jpg"
             )
         )
     )

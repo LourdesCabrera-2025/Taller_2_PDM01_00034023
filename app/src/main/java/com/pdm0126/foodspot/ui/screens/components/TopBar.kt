@@ -3,6 +3,7 @@ package com.pdm0126.foodspot.ui.screens.components
 import android.R.attr.navigationIcon
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -18,7 +19,7 @@ import com.pdm0126.foodspot.ui.theme.PlusJakartaSans
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun FoodStopBar(title: String, navigationIcon: @Composable (() -> Unit)? = null) {
+fun FoodStopBar(title: String, navigationIcon: @Composable (() -> Unit)? = null,     actions: @Composable RowScope.() -> Unit ={}) {
     val gradient = Brush.linearGradient(
         colors = listOf(
             Color(0xFFFF670F),
@@ -49,7 +50,8 @@ fun FoodStopBar(title: String, navigationIcon: @Composable (() -> Unit)? = null)
             },
             navigationIcon = {
                 navigationIcon?.invoke()
-            }
+            },
+            actions = actions
         )
     }
 }

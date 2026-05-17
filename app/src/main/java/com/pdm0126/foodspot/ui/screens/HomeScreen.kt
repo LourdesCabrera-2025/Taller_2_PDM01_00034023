@@ -8,7 +8,10 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.text.input.rememberTextFieldState
+import androidx.compose.runtime.getValue
+import androidx.compose.foundation.text.KeyboardActions
+import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
@@ -19,6 +22,9 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
@@ -35,6 +41,7 @@ fun HomeScreen(
     viewModel: RestauranteViewModel = viewModel(),
 ) {
 
+    var searchText by remember { mutableStateOf("") }
     Scaffold(
         topBar = {
             FoodStopBar("FoodSpot")
@@ -57,7 +64,10 @@ fun HomeScreen(
                     modifier = Modifier
                         .padding(10.dp)
                         .fillMaxWidth(),
-                    state = rememberTextFieldState(),
+                    value = searchText,
+                    onValueChange = {
+                        searchText= it
+                    },
                     label = {
                         Text(
                             text = "FoodSpot ",
@@ -69,6 +79,17 @@ fun HomeScreen(
                             contentDescription = "Search",
                         )
                     },
+                    keyboardOptions = KeyboardOptions(
+                        imeAction = ImeAction.Search
+                    ),
+
+                    keyboardActions= KeyboardActions (
+                        onSearch = {
+                            if (searchText.isNotBlank()) {
+                                navController.navigate("searchrestaurant/$searchText")
+                            }
+                        }
+                    ),
                     colors = OutlinedTextFieldDefaults.colors(
                         focusedBorderColor = Color(0xFFFF2F0F),
                         unfocusedBorderColor = Color(0xFF2D3F54),

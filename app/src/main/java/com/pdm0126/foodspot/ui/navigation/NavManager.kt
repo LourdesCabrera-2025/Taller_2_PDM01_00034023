@@ -7,7 +7,6 @@ import androidx.navigation.compose.composable
 import com.pdm0126.foodspot.ui.screens.DetailRestaurant
 import com.pdm0126.foodspot.ui.screens.HomeScreen
 import com.pdm0126.foodspot.ui.screens.SearchRestaurant
-import com.pdm0126.foodspot.ui.screens.components.NavTab
 
 @Composable
 fun NavManager(
@@ -31,8 +30,15 @@ fun NavManager(
                 restaurantId = restaurantId
             )
         }
-        composable ("searchrestaurant"){
-            SearchRestaurant(navController)
+
+        composable ("searchrestaurant/{query}"){ backStackEntry ->
+            val query = backStackEntry.arguments
+                ?.getString("query") ?: ""
+
+            SearchRestaurant(
+                navController = navController,
+                initialQuery = query
+            )
         }
 
     }

@@ -1,10 +1,10 @@
 package com.pdm0126.foodspot.ui.screens.components
 
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -16,6 +16,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.Font
@@ -41,13 +42,13 @@ fun CardRestaurants(
 
     Card(
         colors = CardDefaults.cardColors(
-            containerColor = Color(0xFFF6F6F6)
+            containerColor = Color(0xFFFFFBF7)
         ),
         modifier = modifier
             .size(width = 200.dp , height = 200.dp)
             .clickable{onClick()},
         elevation = CardDefaults.cardElevation(
-            defaultElevation = 6.dp
+            defaultElevation = 2.dp
         ),
         onClick = {
             navController.navigate("detailrestaurant/${restaurant.id}")
@@ -62,8 +63,8 @@ fun CardRestaurants(
                 contentDescription = restaurant.name,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(90.dp)
-                    .background(Color(0xFFE5E7EB), RoundedCornerShape(4.dp)),
+                    .height(100.dp)
+                    .clip(RoundedCornerShape(16.dp)),
                 contentScale = ContentScale.Crop
             )
 
@@ -82,7 +83,9 @@ fun CardRestaurants(
                 text = restaurant.description,
                 fontSize = 12.sp,
                 fontFamily = FontFamily(Font(R.font.plusjakartasans_regular)),
-                color = Color(0xFF6E6E6E)
+                color = Color(0xFF6E6E6E),
+                maxLines = 2,
+                overflow = TextOverflow.Ellipsis
             )
         }
     }
